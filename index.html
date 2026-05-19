@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>ISO 27001 e ISO 27002 | Guía Profesional de Seguridad de la Información</title>
+    <meta name="description" content="Información completa y profesional sobre ISO 27001 e ISO 27002: definiciones, objetivos, controles, ventajas y aplicación práctica.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7fc;
+            color: #1a2a3a;
+            scroll-behavior: smooth;
+        }
+
+        /* Header / Hero */
+        .hero {
+            background: linear-gradient(135deg, #0b2b3b 0%, #1c4e6e 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 1rem auto 0;
+            opacity: 0.9;
+        }
+
+        /* Navegación */
+        .nav-container {
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0.75rem 1rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1c4e6e;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            background-color: #eef2f5;
+            font-size: 0.85rem;
+        }
+
+        .nav-links a:hover {
+            background-color: #1c4e6e;
+            color: white;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Tarjetas y secciones */
+        .section-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .section-card:hover {
+            transform: translateY(-4px);
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            margin-bottom: 1rem;
+            color: #0b2b3b;
+            border-left: 6px solid #2a9d8f;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.8rem 0;
+            color: #1c4e6e;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+            color: #2a9d8f;
+        }
+
+        .badge {
+            background-color: #e9f5f3;
+            color: #1c6e5e;
+            border-radius: 40px;
+            padding: 0.2rem 1rem;
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-box {
+            background: #f9fbfd;
+            border-left: 4px solid #2a9d8f;
+            padding: 1.2rem;
+            border-radius: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            background: #f9fbfd;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 0.9rem;
+            text-align: left;
+            border-bottom: 1px solid #dce7ed;
+        }
+
+        th {
+            background-color: #e2edf2;
+            color: #0b2b3b;
+        }
+
+        .control-table {
+            overflow-x: auto;
+        }
+
+        .btn-top {
+            position: fixed;
+            bottom: 25px;
+            right: 20px;
+            background-color: #1c4e6e;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.7rem 1.2rem;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        .btn-top:hover {
+            background-color: #2a9d8f;
+        }
+
+        footer {
+            background-color: #0b2b3b;
+            color: #cddfe6;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .section-card {
+                padding: 1.5rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>📘 ISO 27001 & ISO 27002</h1>
+    <p>Guía profesional y completa sobre seguridad de la información | Estándares internacionales para un SGSI robusto</p>
+</div>
+
+<div class="nav-container">
+    <div class="nav-links">
+        <a href="#iso27001">ISO 27001</a>
+        <a href="#iso27002">ISO 27002</a>
+        <a href="#relacion">Relación</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#aplicacion">Aplicación</a>
+        <a href="#ventajas">Ventajas</a>
+        <a href="#controles">Controles ISO 27002</a>
+        <a href="#caso">Caso real</a>
+        <a href="#herramientas">Herramientas</a>
+        <a href="#certificacion">Certificación</a>
+    </div>
+</div>
+
+<div class="container">
+    <!-- ISO 27001 -->
+    <div id="iso27001" class="section-card">
+        <span class="badge">Estándar principal</span>
+        <h2>✅ ¿Qué es ISO 27001?</h2>
+        <p>La norma <strong>ISO/IEC 27001</strong> es un estándar internacional que define los requisitos necesarios para establecer, implementar, mantener y mejorar de forma continua un <strong>Sistema de Gestión de Seguridad de la Información (SGSI)</strong>.</p>
+        <p>Su objetivo principal es proteger tres pilares fundamentales de la información:</p>
+        <div class="grid-2">
+            <div class="info-box"><strong>🔒 Confidencialidad:</strong> Solo personas autorizadas acceden a la información.</div>
+            <div class="info-box"><strong>📝 Integridad:</strong> La información no es alterada de forma indebida.</div>
+            <div class="info-box"><strong>⚡ Disponibilidad:</strong> La información está disponible cuando se necesita.</div>
+        </div>
+        <p><strong>Tríada CIA:</strong> Confidencialidad, Integridad y Disponibilidad – base de toda estrategia de seguridad.</p>
+    </div>
+
+    <!-- ISO 27002 -->
+    <div id="iso27002" class="section-card">
+        <span class="badge">Guía de implementación</span>
+        <h2>📖 ¿Qué es ISO 27002?</h2>
+        <p><strong>ISO/IEC 27002</strong> es una norma complementaria que proporciona directrices detalladas para implementar controles de seguridad. Mientras ISO 27001 dice <strong>qué debe hacerse</strong>, ISO 27002 explica <strong>cómo hacerlo</strong>.</p>
+        <p>Ayuda a proteger sistemas, redes, aplicaciones, bases de datos, infraestructura, activos digitales e información física y electrónica.</p>
+    </div>
+
+    <!-- Relación entre ambas -->
+    <div id="relacion" class="section-card">
+        <h2>🔗 Relación entre ISO 27001 e ISO 27002</h2>
+        <div class="control-table">
+            <table>
+                <thead><tr><th>ISO 27001</th><th>ISO 27002</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Define requisitos obligatorios</td><td>Proporciona guías y mejores prácticas</td></tr>
+                    <tr><td>Certificable</td><td>No certificable</td></tr>
+                    <tr><td>Define el SGSI</td><td>Define los controles de seguridad</td></tr>
+                    <tr><td>Indica "qué hacer"</td><td>Explica "cómo hacerlo"</td></tr>
+                    <tr><td>Enfoque en gestión</td><td>Enfoque en implementación</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>ISO 27001 utiliza los controles de ISO 27002 como referencia para gestionar riesgos de seguridad.</p>
+    </div>
+
+    <!-- Objetivos -->
+    <div id="objetivos" class="section-card">
+        <h2>🎯 Objetivos de ISO 27001 e ISO 27002</h2>
+        <h3>ISO 27001</h3>
+        <p>Proteger la información mediante gestión de riesgos, políticas, controles, auditorías y mejora continua. Minimiza ciberataques, robos de información, brechas de datos, pérdidas financieras e interrupciones operacionales.</p>
+        <h3>ISO 27002</h3>
+        <p>Servir como guía práctica para seleccionar e implementar controles adecuados, reduciendo vulnerabilidades y fortaleciendo procesos internos.</p>
+    </div>
+
+    <!-- Áreas de aplicación -->
+    <div id="aplicacion" class="section-card">
+        <h2>🏢 Áreas de aplicación</h2>
+        <div class="grid-2">
+            <div class="info-box"><strong>💰 Financiero:</strong> Bancos, fintechs, pasarelas de pago. Riesgos: fraude, ransomware, robo de identidad.</div>
+            <div class="info-box"><strong>🏥 Salud:</strong> Hospitales, laboratorios, historias clínicas. Protege datos médicos y personales.</div>
+            <div class="info-box"><strong>🏛 Gobierno:</strong> Instituciones públicas, sistemas nacionales. Riesgos: espionaje, fugas de información.</div>
+            <div class="info-box"><strong>💻 Tecnología:</strong> Cloud, SaaS, data centers. Protege código fuente, servidores, APIs.</div>
+            <div class="info-box"><strong>🎓 Educación:</strong> Universidades, plataformas educativas. Resguarda evaluaciones y registros académicos.</div>
+            <div class="info-box"><strong>🛒 E-commerce:</strong> Tiendas online, marketplaces. Protege tarjetas de crédito y datos de usuarios.</div>
+        </div>
+    </div>
+
+    <!-- Ventajas ISO 27001 -->
+    <div id="ventajas" class="section-card">
+        <h2>🏆 Principales ventajas de ISO 27001</h2>
+        <ul style="margin-left: 1.5rem;">
+            <li><strong>Protección integral:</strong> Reduce hacking, fugas, pérdidas y accesos no autorizados.</li>
+            <li><strong>Confianza del cliente:</strong> Genera credibilidad ante clientes, inversores y socios.</li>
+            <li><strong>Cumplimiento legal:</strong> Ayuda con GDPR, HIPAA, NIST y más.</li>
+            <li><strong>Mejora continua:</strong> Ciclo PDCA (Planificar-Hacer-Verificar-Actuar).</li>
+            <li><strong>Reducción de riesgos:</strong> Identifica amenazas, vulnerabilidades e impactos.</li>
+            <li><strong>Ventaja competitiva:</strong> Requisito en licitaciones y contratos.</li>
+            <li><strong>Mejor organización interna:</strong> Roles, responsabilidades y políticas claras.</li>
+            <li><strong>Respuesta a incidentes:</strong> Planes de contingencia y recuperación ante desastres.</li>
+        </ul>
+        <h3>Ventajas de ISO 27002</h3>
+        <ul>
+            <li>Guía detallada y flexible según tamaño y sector.</li>
+            <li>Basada en mejores prácticas internacionales.</li>
+            <li>Facilita auditorías y fortalece la cultura de seguridad.</li>
+        </ul>
+    </div>
+
+    <!-- Controles ISO 27002 -->
+    <div id="controles" class="section-card">
+        <h2>📋 Controles ISO 27002 (versión 2022)</h2>
+        <p>La versión 2022 organiza <strong>93 controles</strong> en 4 categorías principales:</p>
+        <div class="control-table">
+            <table>
+                <tr><th>Categoría</th><th>Cantidad</th></tr>
+                <tr><td>Organizacionales</td><td>37</td></tr>
+                <tr><td>Personas</td><td>8</td></tr>
+                <tr><td>Físicos</td><td>14</td></tr>
+                <tr><td>Tecnológicos</td><td>34</td></tr>
+            </table>
+        </div>
+        <p><strong>Organizacionales:</strong> políticas, clasificación de información, gestión de incidentes, seguridad con proveedores.<br>
+        <strong>Personas:</strong> capacitación, acuerdos de confidencialidad, teletrabajo seguro.<br>
+        <strong>Físicos:</strong> acceso físico, videovigilancia, áreas seguras.<br>
+        <strong>Tecnológicos:</strong> antivirus, firewalls, cifrado, copias de seguridad, control de acceso, monitoreo.</p>
+    </div>
+
+    <!-- Caso real -->
+    <div id="caso" class="section-card">
+        <h2>📌 Caso real: Empresa financiera internacional</h2>
+        <p><strong>Problemas:</strong> accesos no autorizados, phishing, falta de políticas, contraseñas débiles, ausencia de monitoreo.</p>
+        <p><strong>Solución con ISO 27001 y 27002:</strong></p>
+        <ul>
+            <li>Identificación de activos (servidores, bases de datos, aplicaciones).</li>
+            <li>Evaluación de riesgos (ransomware, robo de credenciales).</li>
+            <li>Implementación de MFA, cifrado, SIEM, copias automáticas.</li>
+            <li>Capacitación en phishing e ingeniería social.</li>
+        </ul>
+        <p><strong>Resultados:</strong> reducción de incidentes, mayor confianza, certificación aprobada y mejora reputacional.</p>
+    </div>
+
+    <!-- Herramientas relacionadas -->
+    <div id="herramientas" class="section-card">
+        <h2>🛠 Herramientas relacionadas</h2>
+        <div class="grid-2">
+            <div class="info-box"><strong>🔍 SIEM:</strong> Splunk, QRadar, Sentinel.</div>
+            <div class="info-box"><strong>📊 GRC:</strong> ServiceNow, RSA Archer.</div>
+            <div class="info-box"><strong>⚠️ Vulnerabilidades:</strong> Nessus, OpenVAS, Qualys.</div>
+            <div class="info-box"><strong>🔐 Gestión de accesos:</strong> Okta, Azure AD, CyberArk.</div>
+            <div class="info-box"><strong>💾 Copias de seguridad:</strong> Veeam, Acronis, Commvault.</div>
+        </div>
+    </div>
+
+    <!-- Proceso de certificación -->
+    <div id="certificacion" class="section-card">
+        <h2>📜 Proceso de certificación ISO 27001</h2>
+        <ol style="margin-left: 1.5rem;">
+            <li>Análisis inicial (gap analysis).</li>
+            <li>Evaluación de riesgos.</li>
+            <li>Implementación de controles basados en ISO 27002.</li>
+            <li>Auditoría interna.</li>
+            <li>Auditoría externa por organismo certificador.</li>
+            <li>Obtención de la certificación (válida por 3 años).</li>
+        </ol>
+        <p>La versión 2022 actualizó controles para cloud, inteligencia de amenazas, enmascaramiento de datos y codificación segura.</p>
+        <p><strong>Desafíos comunes:</strong> costos iniciales, resistencia organizacional, complejidad técnica y mantenimiento continuo.</p>
+    </div>
+</div>
+
+<button class="btn-top" id="btnTop">⬆ Subir</button>
+
+<footer>
+    <p>© 2026 - Guía profesional ISO 27001 e ISO 27002 | Información basada en estándares oficiales.</p>
+    <p>Material educativo y de consulta para profesionales de seguridad de la información.</p>
+</footer>
+
+<script>
+    // Botón volver arriba
+    const btnTop = document.getElementById('btnTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            btnTop.style.display = 'block';
+        } else {
+            btnTop.style.display = 'none';
+        }
+    });
+    btnTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Navegación suave
+    document.querySelectorAll('.nav-links a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if(targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+</body>
+</html>o
